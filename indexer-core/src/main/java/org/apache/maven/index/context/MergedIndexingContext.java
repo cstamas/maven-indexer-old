@@ -78,7 +78,7 @@ public class MergedIndexingContext
         }
     }
 
-    protected Collection<IndexingContext> getMembers()
+    public Collection<IndexingContext> getMembers()
     {
         return membersProvider.getMembers();
     }
