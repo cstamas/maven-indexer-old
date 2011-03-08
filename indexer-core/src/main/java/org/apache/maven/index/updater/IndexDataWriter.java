@@ -24,7 +24,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.List;
@@ -196,9 +195,9 @@ public class IndexDataWriter
             {
                 final String groupList = document.get( ArtifactInfo.ALL_GROUPS_LIST );
 
-                if ( groupList != null )
+                if ( groupList != null && groupList.trim().length() > 0 )
                 {
-                    allGroups.addAll( Arrays.asList( groupList.split( "\\|" ) ) );
+                    allGroups.addAll( ArtifactInfo.str2lst( groupList ) );
                 }
 
                 return false;
@@ -208,9 +207,9 @@ public class IndexDataWriter
             {
                 final String groupList = document.get( ArtifactInfo.ROOT_GROUPS_LIST );
 
-                if ( groupList != null )
+                if ( groupList != null && groupList.trim().length() > 0 )
                 {
-                    rootGroups.addAll( Arrays.asList( groupList.split( "\\|" ) ) );
+                    rootGroups.addAll( ArtifactInfo.str2lst( groupList ) );
                 }
 
                 return false;
